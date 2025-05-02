@@ -105,7 +105,7 @@ function App() {
         setCurrentText("Ногоон товчлуур харахгүй байгаа шиг байна. Томруулаад өгийдөө");
         break;
       case 4:
-        setCurrentText("Улаан товчлуур хаана байгааг мэдэхгүй байна");
+        setCurrentText("Улаан товчлуур хаана байгааг мэдэхгүй байна өө");
         setNoStyle({
           position: "absolute",
           top: "50%",
@@ -132,7 +132,7 @@ function App() {
         setNoOpacity(0.3);
         break;
       case 8:
-        setCurrentText("Анхнаасаа чамд нэг л сонголт байсан хха");
+        setCurrentText("Анхнаасаа чамд нэг л сонголт байсан");
         setShowNoButton(false);
         break;
       default:
@@ -142,48 +142,75 @@ function App() {
   const currentContent = () => {
     switch (noClickCount) {
       case 0: return (
-        <div>
-          <img src={cuteGif} alt="cute GIF" />
+        <div className="h-[400px] flex flex-col items-center justify-center font-semibold mb-8 px-4">
+          <div className="flex items-center justify-center w-80 h-80">
+            <img src={cuteGif} alt="cute GIF" />
+          </div>
+          <div className="text-2xl text-center mt-2 mb-10">{currentText}</div>
         </div>
       )
       case 1: return (
-        <div>
-          <img src={hmmGif} alt="hmm GIF" />
+        <div className="h-[400px] flex flex-col items-center justify-center font-semibold mb-8 px-4">
+          <div className="flex items-center justify-center w-80 h-80">
+            <img src={hmmGif} alt="hmm GIF" />
+          </div>
+          <div className="text-2xl text-center mt-2 mb-10">{currentText}</div>
         </div>
       )
       case 2: return (
-        <div>
-          <img src={duduGif} alt="dudu GIF" />
+        <div className="h-[400px] flex flex-col items-center justify-center font-semibold mb-8 px-4">
+          <div className="flex items-center justify-center w-80 h-80">
+            <img src={duduGif} alt="dudu GIF" />
+          </div>
+          <div className="text-2xl text-center mt-2 mb-10">{currentText}</div>
         </div>
       )
       case 3: return (
-        <div>
-          <img src={workGif} alt="work GIF" />
+        <div className="h-[400px] flex flex-col items-center justify-center font-semibold mb-8 px-4">
+          <div className="flex items-center justify-center w-80 h-80">
+            <img src={workGif} alt="work GIF" />
+          </div>
+          <div className="text-2xl text-center mt-2 mb-10">{currentText}</div>
         </div>
       )
       case 4: return (
-        <div>
-          <img src={thinkGif} alt="think GIF" />
+        <div className="h-[400px] flex flex-col items-center justify-center font-semibold mb-8 px-4">
+          <div className="flex items-center justify-center w-80 h-80">
+            <img src={thinkGif} alt="think GIF" />
+          </div>
+          <div className="text-2xl text-center mt-2 mb-10">{currentText}</div>
         </div>
       )
       case 5: return (
-        <div>
-          <img src={cryGif} alt="cry GIF" />
+        <div className="h-[400px] flex flex-col items-center justify-center font-semibold mb-8 px-4">
+          <div className="flex items-center justify-center w-80 h-80">
+            <img src={cryGif} alt="cry GIF" />
+          </div>
+          <div className="text-2xl text-center mt-2 mb-10">{currentText}</div>
         </div>
       )
       case 6: return (
-        <div>
-          <img src={madGif} alt="mad GIF" />
+        <div className="h-[400px] flex flex-col items-center justify-center font-semibold mb-8 px-4">
+          <div className="flex items-center justify-center w-80 h-80">
+            <img src={madGif} alt="mad GIF" />
+          </div>
+          <div className="text-2xl text-center mt-2 mb-10">{currentText}</div>
         </div>
       )
       case 7: return (
-        <div>
-          <img src={whyGif} alt="why GIF" />
+        <div className="h-[400px] flex flex-col items-center justify-center font-semibold mb-8 px-4">
+          <div className="flex items-center justify-center w-80 h-80">
+            <img src={whyGif} alt="why GIF" />
+          </div>
+          <div className="text-2xl text-center mt-2 mb-10">{currentText}</div>
         </div>
       )
       case 8: return (
-        <div>
-          <img src={coolGif} alt="cool GIF" />
+        <div className="h-[400px] flex flex-col items-center justify-center font-semibold mb-8 px-4">
+          <div className="flex items-center justify-center w-80 h-80">
+            <img src={coolGif} alt="cool GIF" />
+          </div>
+          <div className="text-2xl text-center mt-2 mb-10">{currentText}</div>
         </div>
       )
       default:
@@ -284,8 +311,8 @@ function App() {
         />
       </div>
 
-      <p className="text-sm text-red-600 text-center">
-        😏 Амлалтаа биелүүлэхгүй бол шийтгэлтэй!
+      <p className="text-sm text-red-600 text-xs text-center">
+        Анхаар! Амлалтаа биелүүлэхгүй бол шийтгэлтэй 😏
       </p>
 
       <button
@@ -302,10 +329,7 @@ function App() {
       {finished && <Confetti width={width} height={height} />}
       {!finished ? (
         <>
-          <div className="flex flex-col items-center justify-center font-semibold mb-8 px-4">
             {currentContent()}
-            <div className="text-2xl text-center mt-2 mb-10">{currentText}</div>
-          </div>
           <div className={`flex justify-center ${
                 noClickCount === 0 ? 'gap-8' : 
                 noClickCount === 1 ? 'gap-14' : 
